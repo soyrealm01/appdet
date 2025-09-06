@@ -1,220 +1,675 @@
-// data-lmx.js
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
 
-// -------------------------------
-// BASE DE DATOS DE CLUBES
-// -------------------------------
-const clubs = {
-    6358: {
-        id: 6358,
-        name: "San Luis",
-        logo: "https://images.fotmob.com/image_resources/logo/teamlogo/6358.png"
-    },
-    6578: {
-        id: 6578,
-        name: "Cruz Azul",
-        logo: "https://images.fotmob.com/image_resources/logo/teamlogo/6578.png"
-    },
-    7849: {
-        id: 7849,
-        name: "Rayados",
-        logo: "https://images.fotmob.com/image_resources/logo/teamlogo/7849.png"
-    },
-    6618: {
-        id: 6618,
-        name: "Toluca",
-        logo: "https://images.fotmob.com/image_resources/logo/teamlogo/6618.png"
-    },
-    1841: {
-        id: 1841,
-        name: "León",
-        logo: "https://images.fotmob.com/image_resources/logo/teamlogo/1841.png"
-    },
-    7848: {
-        id: 7848,
-        name: "Pachuca",
-        logo: "https://images.fotmob.com/image_resources/logo/teamlogo/7848.png"
-    },
-    6576: {
-        id: 6576,
-        name: "CF America",
-        logo: "https://images.fotmob.com/image_resources/logo/teamlogo/6576.png"
-    },
-    8561: {
-        id: 8561,
-        name: "Tigres",
-        logo: "https://images.fotmob.com/image_resources/logo/teamlogo/8561.png"
-    },
-    162418: {
-        id: 162418,
-        name: "Tijuana",
-        logo: "https://images.fotmob.com/image_resources/logo/teamlogo/162418.png"
-    },
-    7857: {
-        id: 7857,
-        name: "Santos Laguna",
-        logo: "https://images.fotmob.com/image_resources/logo/teamlogo/7857.png"
-    },
-    1170234: {
-        id: 1170234,
-        name: "Mazatlan FC",
-        logo: "https://images.fotmob.com/image_resources/logo/teamlogo/1170234.png"
-    },
-    1842: {
-        id: 1842,
-        name: "Necaxa",
-        logo: "https://images.fotmob.com/image_resources/logo/teamlogo/1842.png"
-    },
-    1946: {
-        id: 1946,
-        name: "Pumas",
-        logo: "https://images.fotmob.com/image_resources/logo/teamlogo/1946.png"
-    },
-    649424: {
-        id: 649424,
-        name: "FC Juarez",
-        logo: "https://images.fotmob.com/image_resources/logo/teamlogo/649424.png"
-    },
-    6577: {
-        id: 6577,
-        name: "Atlas",
-        logo: "https://images.fotmob.com/image_resources/logo/teamlogo/6577.png"
-    },
-    7807: {
-        id: 7807,
-        name: "Chivas",
-        logo: "https://images.fotmob.com/image_resources/logo/teamlogo/7807.png"
-    },
-    7847: {
-        id: 7847,
-        name: "Puebla",
-        logo: "https://images.fotmob.com/image_resources/logo/teamlogo/7847.png"
-    },
-    1943: {
-        id: 1943,
-        name: "Queretaro FC",
-        logo: "https://images.fotmob.com/image_resources/logo/teamlogo/1943.png"
-    }
-};
+body {
+  background-color: #0f1624;
+  color: white;
+  min-height: 100vh;
+}
 
-// -------------------------------
-// BASE DE DATOS DE NACIONALIDADES
-// -------------------------------
-const nationalities = {
-    8204: {
-        id: 8204,
-        name: "Italia",
-        flag: "https://images.fotmob.com/image_resources/logo/teamlogo/8204.png"
-    },
-    5790: {
-        id: 5790,
-        name: "Gales",
-        flag: "https://images.fotmob.com/image_resources/logo/teamlogo/5790.png"
-    },
-    5796: {
-        id: 5796,
-        name: "Uruguay",
-        flag: "https://images.fotmob.com/image_resources/logo/teamlogo/5796.png"
-    },
-    6710: {
-        id: 6710,
-        name: "México",
-        flag: "https://images.fotmob.com/image_resources/logo/teamlogo/6710.png"
-    },
-    6713: {
-        id: 6713,
-        name: "USA",
-        flag: "https://images.fotmob.com/image_resources/logo/teamlogo/6713.png"
-    },
-    8258: {
-        id: 8258,
-        name: "Colombia",
-        flag: "https://images.fotmob.com/image_resources/logo/teamlogo/8258.png"
-    },
-    6706: {
-        id: 6706,
-        name: "Argentina",
-        flag: "https://images.fotmob.com/image_resources/logo/teamlogo/6706.png"
-    },
-    8361: {
-        id: 8361,
-        name: "Portugal",
-        flag: "https://images.fotmob.com/image_resources/logo/teamlogo/8361.png"
-    },
-    10255: {
-        id: 10255,
-        name: "Egipto",
-        flag: "https://images.fotmob.com/image_resources/logo/teamlogo/10255.png"
-    },
-    6723: {
-        id: 6723,
-        name: "Francia",
-        flag: "https://images.fotmob.com/image_resources/logo/teamlogo/6723.png"
-    }
-};
+.container {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+}
 
-// -------------------------------
-// BASE DE DATOS DE JUGADORES
-// -------------------------------
-const players = {
-    203739: {
-        id: 203739,
-        name: "Joao Pedro",
-        fullName: "Joao Pedro",
-        position: "Delantero",
-        goals: 7,
-        assists: 3,
-        age: 31,
-        marketValue: "3.5 MDE",
-        rating: "8.9",
-        clubId: 6358,
-        nationalityId: 8204,
-        photo: "https://images.fotmob.com/image_resources/playerimages/203739.png"
-    },
-    357080: {
-        id: 357080,
-        name: "Ocampos",
-        fullName: "Lucas Ocampos",
-        position: "Mediocampista ofensivo",
-        goals: 5,
-        assists: 2,
-        age: 29,
-        marketValue: "7 MDE",
-        rating: "9.1",
-        clubId: 7849,
-        nationalityId: 6706,
-        photo: "https://images.fotmob.com/image_resources/playerimages/357080.png"
-    },
-    215428: {
-        id: 215428,
-        name: "Sepúlveda",
-        fullName: "Ángel Sepúlveda",
-        position: "Delantero",
-        goals: 6,
-        assists: 1,
-        age: 32,
-        marketValue: "2.2 MDE",
-        rating: "8.4",
-        clubId: 6578,
-        nationalityId: 6710,
-        photo: "https://images.fotmob.com/image_resources/playerimages/215428.png"
-    }
-};
+.header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+}
 
-// -------------------------------
-// FUNCIÓN PARA OBTENER DATOS COMPLETOS DE JUGADORES
-// -------------------------------
-function getPlayerFullData(playerId) {
-    const player = players[playerId];
-    if (!player) {
-        return null;
-    }
+.back-button {
+  color: white;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 
-    const club = clubs[player.clubId];
-    const nationality = nationalities[player.nationalityId];
+.competition-name {
+  flex: 1;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+}
 
-    return {
-        ...player,
-        club: club ? { id: club.id, name: club.name, logo: club.logo } : null,
-        nationality: nationality ? { id: nationality.id, name: nationality.name, flag: nationality.flag } : null
-    };
+.match-score {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+
+.team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+}
+
+.team-logo {
+  width: 65px;
+  height: 65px;
+  border-radius: 20%;
+  background-color: #2a3142;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.team-logo img {
+  width: 85%;
+  height: auto;
+}
+
+.team-name {
+  font-size: 12px;
+  text-align: center;
+}
+
+.score {
+  display: flex;
+  align-items: center;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.score-divider {
+  margin: 0 10px;
+  color: #666;
+}
+
+.match-time {
+  text-align: center;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.match-actions {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  border-bottom: 5px solid #2a3142;
+}
+
+.action-button {
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+  border: none;
+}
+
+.action-button.active {
+  background-color: #ff6b4a;
+  color: white;
+}
+
+.formation-section {
+  padding: 10px;
+}
+
+.formation-title {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.formation-subtitle {
+  font-size: 12px;
+  color: #aaa;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.team-tabs {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.team-tab {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.team-tab.active {
+  background-color: #ff6b4a;
+  color: white;
+}
+
+.pitch {
+  width: 100%;
+  height: 500px;
+  background-color: #4caf50;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.pitch-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.center-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 50%;
+}
+
+.center-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+}
+
+.halfway-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(255, 255, 255);
+  transform: translateY(-50%);
+}
+
+.penalty-box-top {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 20%;
+  border-bottom: 2px solid rgb(255, 255, 255);
+  border-left: 2px solid rgb(255, 255, 255);
+  border-right: 2px solid rgb(255, 255, 255);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.penalty-box-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 20%;
+  border-top: 2px solid rgb(255, 255, 255);
+  border-left: 2px solid rgb(255, 255, 255);
+  border-right: 2px solid rgb(255, 255, 255);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.goal-box-top {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  height: 8%;
+  border-bottom: 2px solid rgb(255, 255, 255);
+  border-left: 2px solid rgb(255, 255, 255);
+  border-right: 2px solid rgb(255, 255, 255);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.goal-box-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  height: 8%;
+  border-top: 2px solid rgb(255, 255, 255);
+  border-left: 2px solid rgb(255, 255, 255);
+  border-right: 2px solid rgb(255, 255, 255);
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.goal-top {
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20%;
+  height: 5px;
+  background-color: rgb(255, 255, 255);
+}
+
+.goal-bottom {
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20%;
+  height: 5px;
+  background-color: rgb(255, 255, 255);
+}
+
+.player {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: #000000;
+  cursor: pointer;
+  transition: transform 0.2s;
+  z-index: 2;
+}
+
+.player:hover {
+  transform: scale(1.2);
+  z-index: 3;
+}
+
+.player-name {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 10px;
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+}
+
+.player.captain {
+  border: 2px solid gold;
+}
+
+.player.yellow-card {
+  box-shadow: 0 0 0 3px rgba(255, 255, 0, 0.5);
+}
+
+.player.red-card {
+  box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.5);
+}
+
+.player.substituted {
+  opacity: 0.7;
+}
+
+.player-details {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #1a2235;
+  border-radius: 10px;
+  padding: 20px;
+  width: 80%;
+  max-width: 300px;
+  z-index: 10;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.player-details-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.player-details-number {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-right: 15px;
+}
+
+.player-details-info h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.player-details-info p {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.player-details-stats {
+  margin-top: 15px;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.stat-value {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.close-details {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 5;
+}
+
+/* Grass pattern */
+.pitch::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    to right,
+    transparent,
+    transparent 10px,
+    rgba(0, 0, 0, 0.101) 10px,
+    rgba(0, 0, 0, 0.101) 20px
+  );
+  z-index: 1;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.score {
+  animation: pulse 1s ease-in-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .pitch {
+    height: 400px;
+  }
+  
+  .player {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+  
+  .player-name {
+    font-size: 10px;
+  }
+}
+
+/* Standings Tab Content */
+.stats-container {
+  padding: 20px;
+  display: none;
+}
+
+/* Standings table styles */
+.standings-table {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 10px;
+}
+
+.league-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: white;
+  font-size: 14px;
+}
+
+.league-table th {
+  padding: 10px 5px;
+  text-align: center;
+  font-weight: 500;
+  color: #aaa;
+  border-bottom: 1px solid #2a3142;
+}
+
+.league-table th:first-child {
+  width: 30px;
+}
+
+.league-table th:nth-child(2) {
+  text-align: left;
+}
+
+.league-table td {
+  padding: 12px 5px;
+  text-align: center;
+  border-bottom: 1px solid #2a3142;
+}
+
+.team-cell {
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.table-team-logo {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.table-row:nth-child(1) {
+  background-color: rgba(59, 89, 152, 0.2);
+}
+
+.table-row:nth-child(2),
+.table-row:nth-child(3),
+.table-row:nth-child(4) {
+  background-color: rgba(59, 89, 152, 0.1);
+}
+
+.table-row:nth-child(5),
+.table-row:nth-child(6) {
+  background-color: rgba(220, 53, 69, 0.1);
+}
+
+/* H2H tab styles */
+.h2h-container {
+  padding: 20px;
+  display: none;
+}
+
+.h2h-summary {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.h2h-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.h2h-value {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.h2h-label {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.previous-matches {
+  margin-top: 20px;
+}
+
+.previous-match {
+  background-color: #1a2235;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.previous-match-date {
+  font-size: 12px;
+  color: #aaa;
+  margin-bottom: 10px;
+}
+
+.previous-match-teams {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.previous-match-team {
+  display: flex;
+  align-items: center;
+}
+
+.previous-match-logo {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.previous-match-score {
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+/* Line-up tab styles */
+.lineup-container {
+  padding: 20px;
+  display: none;
+}
+
+.lineup-team {
+  margin-bottom: 30px;
+}
+
+.lineup-team-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.lineup-team-logo {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.lineup-team-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.lineup-players {
+  display: flex;
+  flex-direction: column;
+}
+
+.lineup-player {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #2a3142;
+}
+
+.lineup-player-number {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #ff6b4a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  margin-right: 15px;
+}
+
+.lineup-player-number.away {
+  background-color: #3498db;
+}
+
+.lineup-player-name {
+  flex: 1;
+}
+
+.lineup-player-position {
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* Animations for tab switching */
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+
 }
