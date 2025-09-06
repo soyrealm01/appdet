@@ -147,7 +147,7 @@ const nationalities = {
 const players = {
     203739: {
         id: 203739,
-        name: "Joao Pedro",
+        name: "J. Pedro",
         fullName: "Joao Pedro",
         position: "Delantero",
         goals: 7,
@@ -204,3 +204,4 @@ function getPlayerFullData(playerId) {
         nationality: nationality ? { id: nationality.id, name: nationality.name, flag: nationality.flag } : null
     };
 }
+
