@@ -1,8 +1,3 @@
-// data-lmx.js
-
-// -------------------------------
-// BASE DE DATOS DE CLUBES
-// -------------------------------
 const clubs = {
     6358: {
         id: 6358,
@@ -96,9 +91,6 @@ const clubs = {
     }
 };
 
-// -------------------------------
-// BASE DE DATOS DE NACIONALIDADES
-// -------------------------------
 const nationalities = {
     8204: {
         id: 8204,
@@ -152,9 +144,6 @@ const nationalities = {
     }
 };
 
-// -------------------------------
-// BASE DE DATOS DE JUGADORES
-// -------------------------------
 const players = {
     203739: {
         id: 203739,
@@ -200,9 +189,6 @@ const players = {
     }
 };
 
-// -------------------------------
-// FUNCIÓN PARA OBTENER DATOS COMPLETOS DE JUGADORES
-// -------------------------------
 function getPlayerFullData(playerId) {
     const player = players[playerId];
     if (!player) {
